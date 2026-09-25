@@ -15,7 +15,7 @@ Works with any directory of markdown files.
 
 ## When Invoked
 
-1. **Clarify intent** — ask the user what they need:
+1. **Pick the command** from the request; ask only if it's ambiguous:
    - **Setup**: bootstrap YAML frontmatter on existing markdown files (`init`)
    - **Maintenance**: run decay to update relevance scores and tiers (`decay`)
    - **Health check**: show tier distribution and context budget (`stats`, `scan`)
@@ -25,7 +25,7 @@ Works with any directory of markdown files.
    - **Touch**: mark a card as recently accessed (`touch`)
    - **Compress**: generate L1 summaries and cache token counts (`compress`)
    - **Generate L1**: regenerate L1 summary for cards (`generate-l1`)
-2. **Determine target directory** — ask which vault/directory to operate on
+2. **Determine target directory** — take it from the request or context; ask if it isn't clear
 3. **Run the appropriate command** via `python3 <skill_dir>/scripts/memory-engine.py <command> <args>`
 4. **Report results** — summarize what changed (files modified, tier distribution, recommendations)
 5. **Suggest next steps** — e.g., "run `decay` daily via cron", "consider promoting X to core"
